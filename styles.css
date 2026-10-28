@@ -168,6 +168,22 @@ body {
   z-index: 1000;
 }
 
+.bfh-back {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  z-index: 1000;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.bfh-back:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
 .github-link .bg {
   fill: #fff;
   fill-opacity: 0.2;
