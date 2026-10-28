@@ -173,7 +173,9 @@ let lossTrain = 0;
 let lossTest = 0;
 let player = new Player();
 let lineChart = new AppendingLineChart(d3.select("#linechart"),
-    ["#777", "black"]);
+    (window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches ?
+      ["#9aa3b0", "#eef0f3"] : ["#777", "black"]));
 
 function makeGUI() {
   // Close a pinned hovercard when the user presses the mouse outside of it.

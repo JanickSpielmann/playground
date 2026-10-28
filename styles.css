@@ -46,7 +46,7 @@ h3 {
 }
 
 p a {
-  color: #0D658C;
+  color: var(--pg-accent);
 }
 
 /* Layout */
@@ -177,7 +177,7 @@ body {
   padding: 0 16px;
   line-height: 34px;
   background-color: #f7f7f7;
-  color: #183D4E;
+  color: var(--pg-fill);
   font-size: 14px;
   text-decoration: none;
 }
@@ -201,7 +201,7 @@ body {
 }
 
 .github-link .icon {
-  fill: #183D4E;
+  fill: var(--pg-fill);
   fill-opacity: 0.7;
 }
 
@@ -211,7 +211,7 @@ body {
 
 header {
   border-bottom: solid 1px rgba(0,0,0,0.4);
-  background-color: #183D4E;
+  background-color: var(--pg-fill);
   color: white;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -350,7 +350,7 @@ header h1 .optional {
 }
 
 #top-controls .control select:focus {
-  border-bottom-color: #183D4E;
+  border-bottom-color: var(--pg-fill);
 }
 
 #top-controls .control .select::after {
@@ -957,7 +957,7 @@ footer .links a:hover {
 .mdl-button--fab.mdl-button--colored:active,
 .mdl-button--fab.mdl-button--colored:focus,
 .mdl-button--fab.mdl-button--colored:focus:not(:active) {
-    background: #183D4E;
+    background: var(--pg-fill);
 }
 
 /* Checkbox */
@@ -967,51 +967,345 @@ footer .links a:hover {
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
-  background-color: #183D4E;
+  background-color: var(--pg-fill);
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
-  background-color: #183D4E;
+  background-color: var(--pg-fill);
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__box-outline {
-  border-color: #183D4E;
+  border-color: var(--pg-fill);
 }
 
 .mdl-checkbox__ripple-container .mdl-ripple {
-  background-color: #183D4E;
+  background-color: var(--pg-fill);
 }
 
 /* Slider */
 
 #main-part .mdl-slider.is-upgraded {
-  color: #183D4E;
+  color: var(--pg-fill);
 }
 
 #main-part .mdl-slider__background-lower {
-  background-color: #183D4E;
+  background-color: var(--pg-fill);
 }
 
 #main-part .mdl-slider.is-upgraded::-webkit-slider-thumb {
-  background-color: #183D4E;
+  background-color: var(--pg-fill);
 }
 
 #main-part .mdl-slider.is-upgraded::-moz-range-thumb {
-  background-color: #183D4E;
+  background-color: var(--pg-fill);
 }
 
 #main-part .mdl-slider.is-upgraded::-ms-thumb {
-  background-color: #183D4E;
+  background-color: var(--pg-fill);
 }
 
 #main-part .mdl-slider.is-upgraded.is-lowest-value::-webkit-slider-thumb {
-  border-color: #183D4E;
+  border-color: var(--pg-fill);
 }
 
 #main-part .mdl-slider.is-upgraded.is-lowest-value::-moz-range-thumb {
-  border-color: #183D4E;
+  border-color: var(--pg-fill);
 }
 /* Keep grey focus circle for non-start values */
 #main-part .mdl-slider.is-upgraded:focus:not(:active)::-webkit-slider-thumb {
   box-shadow: 0 0 0 10px rgba(0,0,0, 0.12);
+}
+
+
+/* ==========================================================================
+   BFH WBAI theme (bfh.spielmann.it, Basics of AI)
+   Same colour concept as modul-farbe.css: dark by default, light when the
+   system prefers light. The orange/blue data colours of the playground are
+   kept on purpose, they encode the two classes.
+   ========================================================================== */
+
+:root {
+  --pg-fill: #0f766e;
+  --pg-accent: #7bb4af;
+  --pg-bg: #02110f;
+  --pg-surface: #031816;
+  --pg-surface-hover: #041f1d;
+  --pg-line: #06322e;
+  --pg-line-strong: #2f5e59;
+  --pg-text: #eef0f3;
+  --pg-muted: #9aa3b0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --pg-accent: #0f766e;
+    --pg-bg: #eef5f5;
+    --pg-surface: #ffffff;
+    --pg-surface-hover: #f8fbfb;
+    --pg-line: #cae1df;
+    --pg-line-strong: #9fc8c5;
+    --pg-text: #1b1d21;
+    --pg-muted: #666d78;
+  }
+}
+
+html { color-scheme: light dark; }
+
+body {
+  background-color: var(--pg-bg);
+  color: var(--pg-text);
+}
+
+h1, h2, h3, h4 { color: var(--pg-text); }
+
+/* Top bar */
+.bfh-back {
+  background-color: var(--pg-bg);
+  color: var(--pg-muted);
+}
+
+.bfh-back:hover {
+  color: var(--pg-text);
+  text-decoration: none;
+}
+
+.github-link .icon {
+  fill: var(--pg-muted);
+  fill-opacity: 1;
+}
+
+.github-link:hover .icon {
+  fill: var(--pg-text);
+}
+
+/* Controls */
+#top-controls {
+  background: var(--pg-surface);
+  border-bottom: 1px solid var(--pg-line);
+  border-top: 1px solid var(--pg-line);
+  box-shadow: none;
+}
+
+#top-controls .control .label,
+#top-controls .control label {
+  color: var(--pg-muted);
+}
+
+#top-controls .control select {
+  color: var(--pg-text);
+  border-bottom-color: var(--pg-line-strong);
+}
+
+#top-controls .control select option {
+  background: var(--pg-surface);
+  color: var(--pg-text);
+}
+
+#top-controls .control select:focus {
+  border-bottom-color: var(--pg-accent);
+}
+
+#top-controls .control .select::after {
+  color: var(--pg-muted);
+}
+
+#top-controls .mdl-button--icon,
+#top-controls .mdl-button--icon .material-icons {
+  color: var(--pg-text);
+}
+
+#play-pause-button .material-icons {
+  color: #fff;
+}
+
+#hovercard {
+  background: var(--pg-surface);
+  border-color: var(--pg-line-strong);
+  color: var(--pg-text);
+}
+
+#hovercard input {
+  background: var(--pg-bg);
+  color: var(--pg-text);
+  border: 1px solid var(--pg-line-strong);
+}
+
+/* Main part */
+#main-part p,
+#main-part .column .label,
+#main-part .column label {
+  color: var(--pg-muted);
+}
+
+#main-part .mdl-button .material-icons {
+  color: var(--pg-text);
+  opacity: 0.8;
+}
+
+.more button,
+.more button:hover,
+.more button:active,
+.more button:focus,
+.more button:focus:not(:active) {
+  background: var(--pg-surface);
+}
+
+#main-part .basic-button {
+  color: var(--pg-muted);
+}
+
+#main-part .basic-button:hover,
+#main-part .basic-button:focus,
+#main-part .basic-button:active {
+  color: var(--pg-text);
+}
+
+.data.column .data-thumbnail {
+  border-color: var(--pg-line);
+}
+
+.data.column .data-thumbnail:hover {
+  border-color: var(--pg-line-strong);
+}
+
+.data.column .data-thumbnail.selected {
+  border-color: var(--pg-accent);
+}
+
+/* Network and charts */
+#network svg .main-label,
+#network svg .active .main-label {
+  fill: var(--pg-text);
+}
+
+#network svg #markerArrow {
+  fill: var(--pg-text);
+  stroke: var(--pg-text);
+}
+
+#network .node rect {
+  fill: var(--pg-surface);
+}
+
+#network .canvas canvas {
+  border-color: var(--pg-line-strong);
+}
+
+#network .canvas.hovered canvas {
+  border-color: var(--pg-accent);
+}
+
+.features.column .callout svg path {
+  stroke: var(--pg-text);
+}
+
+.features.column .callout svg defs path {
+  fill: var(--pg-text);
+}
+
+.axis line {
+  stroke: var(--pg-muted);
+}
+
+.axis text {
+  fill: var(--pg-muted);
+}
+
+#heatmap .tick line {
+  stroke: var(--pg-line);
+}
+
+#heatmap .tick text {
+  fill: var(--pg-muted);
+}
+
+#heatmap .tick:nth-child(7) text {
+  fill: var(--pg-text);
+}
+
+#heatmap .tick:nth-child(7) line {
+  stroke: var(--pg-line-strong);
+}
+
+.bracket,
+.bracket.reverse {
+  border-color: var(--pg-line-strong);
+}
+
+.metrics .train {
+  color: var(--pg-muted);
+}
+
+#loss-test {
+  color: var(--pg-text);
+}
+
+.output .output-stats .value {
+  color: var(--pg-muted);
+}
+
+g.test circle {
+  stroke: var(--pg-text);
+}
+
+/* Material Design Lite parts */
+.mdl-checkbox__box-outline {
+  border-color: var(--pg-muted);
+}
+
+#main-part .mdl-slider.is-upgraded {
+  color: var(--pg-fill);
+}
+
+/* Article and footer */
+article {
+  background: var(--pg-surface);
+  border-top: 1px solid var(--pg-line);
+  box-shadow: none;
+}
+
+article h2,
+article h3,
+article p {
+  color: var(--pg-text);
+}
+
+article p {
+  opacity: 0.85;
+}
+
+footer {
+  border-top-color: var(--pg-line);
+  color: var(--pg-muted);
+}
+
+footer svg {
+  fill: var(--pg-muted);
+}
+
+footer .links a {
+  color: var(--pg-muted);
+}
+
+.more button,
+.more button .material-icons {
+  color: var(--pg-text);
+}
+
+#main-part .mdl-slider__background-upper {
+  background-color: var(--pg-line-strong);
+}
+
+#main-part .mdl-slider.is-upgraded::-webkit-slider-thumb {
+  background-color: var(--pg-fill);
+}
+
+#main-part .mdl-slider.is-upgraded.is-lowest-value::-webkit-slider-thumb {
+  background: var(--pg-bg);
+  border-color: var(--pg-line-strong);
+}
+
+#main-part .mdl-slider.is-upgraded.is-lowest-value::-moz-range-thumb {
+  background: var(--pg-bg);
+  border-color: var(--pg-line-strong);
 }
